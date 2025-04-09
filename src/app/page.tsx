@@ -57,10 +57,10 @@ export default function Home() {
   
   // Custom hook for section animations
   function useScrollAnimation(threshold = 0.1) {
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null); // Add this specific type
     const isInView = useInView(ref, { once: true, amount: threshold });
     
-    return [ref, isInView];
+    return [ref, isInView] as const; // Add as const to preserve the tuple type
   }
   
   // Sample projects data with categories
