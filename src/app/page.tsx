@@ -282,7 +282,7 @@ export default function Home() {
                       <motion.div variants={staggerItem}>
                         <h4 className="font-medium mb-2">Frontend</h4>
                         <div className="flex flex-wrap gap-2">
-                          {['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux'].map((skill, i) => (
+                          {['React', 'TypeScript', 'Next.js', 'Tailwind CSS','p5.js'].map((skill, i) => (
                             <motion.span 
                               key={skill} 
                               variants={staggerItem}
@@ -296,7 +296,7 @@ export default function Home() {
                       <motion.div variants={staggerItem}>
                         <h4 className="font-medium mb-2">Backend</h4>
                         <div className="flex flex-wrap gap-2">
-                          {['Node.js', 'Express', 'MongoDB', 'SQL', 'GraphQL'].map((skill, i) => (
+                          {['SQL','python','javascript'].map((skill, i) => (
                             <motion.span 
                               key={skill} 
                               variants={staggerItem}
@@ -310,7 +310,7 @@ export default function Home() {
                       <motion.div variants={staggerItem}>
                         <h4 className="font-medium mb-2">DevOps</h4>
                         <div className="flex flex-wrap gap-2">
-                          {['Docker', 'CI/CD', 'AWS', 'Git', 'Testing'].map((skill, i) => (
+                          {['Docker','Git'].map((skill, i) => (
                             <motion.span 
                               key={skill} 
                               variants={staggerItem}
