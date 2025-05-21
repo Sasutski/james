@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "logo": "James Tan",
+    "links": [
+      {
+        "title": "Projects",
+        "url": ""
+      }
+      ,
+      {
+        "title": "About",
+        "url": ""
+      },
+      {
+        "title": "Contact",
+        "url": ""
+      }
+    ]
+  },
+
+  "intro": {
+    "heading": "Let’s create the ultimate <span class='italic'>website</span> for any situation",
+    "icon": "/icons/intro-icon.svg"
+  },
+   
+  "portrait": {
+    "image": "/portrait.png"
+  },
+
+  "about": {
+    "text": "I’m a <span class='italic'>web developer</span> with a passion for creating beautiful and functional websites. I specialize in building responsive and user-friendly web applications using the latest technologies.",
+    "icon": "/icons/about-icon.svg"
+  },
+
+  "contact": {
+    "label": "Have some questions?",
+    "heading": "Contact <span class='italic'>me</span>",
+    "linkIcon": "/icons/arrow-icon.svg",
+    "email": "tan_yu_kai_james@s2022.ssts.edu.sg"
+  },
+
+  "work": {
+    "projects": [
+      {
+        "title": "[Commission] Kieren",
+        "url": "https://kieren.vercel.app",
+        "media": "/work.png"
+      },
+      {
+        "title": "[Commission] Jovan",
+        "url": "https://jovanl.vercel.app",
+        "media": "/work.png"
+
+      },
+      {
+        "title": "[Commission] Pooch2Spoil",
+        "url": "https://pooch2spoil.com",
+        "media": "/work.png"
+
+      },
+      {
+        "title": "Others",
+        "url": "",
+        "media": "/work.png"
+
+      }
+    ],
+    "linkIcon": "/icons/arrow-icon-black.svg"  
+  },
+
+ 
+  "socials": {
+    "links": [
+      {
+        "title": "Linkedin",
+        "url": "https://www.linkedin.com/in/tanyukaijames/"
+      },
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/sasutskitan/"
+      },
+      {
+        "title": "Github",
+        "url": "https://github.com/sasutski"
+      }
+    ]
+  }
+}
