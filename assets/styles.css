@@ -1,0 +1,87 @@
+* {
+    background-color: rgb(255, 252, 253);
+}
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+}
+.first-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile-picture-container {
+    height: 200px;
+    width: 200px; /* Adding width to match height for a perfect circle */
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: margin-bottom 0.3s ease, transform 0.3s ease; /* Remove opacity from container transitions */
+    border-radius: 50%; /* Making container circular like the profile picture */
+    overflow: hidden; /* To ensure content stays within the circular boundary */
+    position: relative; /* Add position relative to container */
+}
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    transition: opacity 0.3s ease; /* Add transition for opacity to profile picture */
+}
+
+/* Add new class for the "Click me!" text */
+.click-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 100%; /* Change from 400px to 100% to match container width */
+    text-align: center; /* Center the text horizontally */
+    z-index: 2;
+    pointer-events: none; /* Prevents the text from interfering with clicks */
+    background-color: transparent; /* Make background transparent */
+}
+
+.profile-picture-container:hover .click-text {
+    opacity: 1;
+}
+.profile-picture-container:hover {
+    margin-bottom: 60px;
+    transform: scale(1.2); /* Move scale effect to container */
+
+}
+.profile-picture:hover {
+    opacity: 0.3; /* Add opacity change on hover */
+}
+.name {
+    font-size: 2.5rem;
+    color: #333333;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+.alt {
+    font-size: 1.2rem;
+    color: #777777;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Add these new hover effects to make name and pronouns drop down */
+.profile-picture-container:hover ~ .name {
+    transform: translateY(10px);
+}
+
+.profile-picture-container:hover ~ .alt {
+    transform: translateY(10px);
+}
+.profile-picture-container:hover ~ .alt {
+    transform: translateY(10px);
+}
+
