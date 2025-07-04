@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const profileSection = document.getElementById('profileSection');
     const profilePicture = document.getElementById('profilePicture');
+    const currentTimeElement = document.getElementById('currentTime');
+    
+    // Update current time
+    function updateTime() {
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        const formattedTime = hours + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
+        currentTimeElement.textContent = formattedTime;
+    }
+    
+    // Update time immediately and then every minute
+    updateTime();
+    setInterval(updateTime, 60000);
     
     // Create a container for the text elements when in collapsed state
     function createTextContainer() {
