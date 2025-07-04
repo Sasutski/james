@@ -4,6 +4,7 @@
 body {
     font-family: 'Arial', sans-serif;
     padding: 0;
+    margin: 0;
 }
 .first-section {
     width: 100%;
@@ -12,6 +13,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s ease;
+}
+
+/* Collapsed state for the section */
+.collapsed {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; /* Changed from flex-start to center for vertical alignment */
+    padding: 20px;
+    height: auto;
 }
 .profile-picture-container {
     height: 200px;
@@ -20,57 +31,93 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: margin-bottom 0.3s ease, transform 0.3s ease; /* Remove opacity from container transitions */
+    transition: all 0.3s ease;
     border-radius: 50%; /* Making container circular like the profile picture */
     overflow: hidden; /* To ensure content stays within the circular boundary */
     position: relative; /* Add position relative to container */
+    cursor: pointer;
+}
+
+/* Collapsed state for profile picture */
+.collapsed .profile-picture-container {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 0;
+    margin-left: 15px;
 }
 .profile-picture {
     width: 200px;
     height: 200px;
-    transition: opacity 0.3s ease; /* Add transition for opacity to profile picture */
+    transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
-/* Add new class for the "Click me!" text */
-.click-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    width: 100%; /* Change from 400px to 100% to match container width */
-    text-align: center; /* Center the text horizontally */
-    z-index: 2;
-    pointer-events: none; /* Prevents the text from interfering with clicks */
-    background-color: transparent; /* Make background transparent */
-}
-
-.profile-picture-container:hover .click-text {
-    opacity: 1;
+/* Collapsed state for the profile image */
+.collapsed .profile-picture {
+    width: 80px;
+    height: 80px;
 }
 .profile-picture-container:hover {
     margin-bottom: 60px;
     transform: scale(1.2); /* Move scale effect to container */
+}
 
+/* Disable hover effects in collapsed state */
+.collapsed .profile-picture-container:hover {
+    margin-bottom: 0;
+    transform: none;
 }
 .profile-picture:hover {
-    opacity: 0.3; /* Add opacity change on hover */
+    opacity: 0.4; /* Add opacity change on hover */
+}
+
+/* Disable hover opacity in collapsed state */
+.collapsed .profile-picture:hover {
+    opacity: 1;
 }
 .name {
     font-size: 2.5rem;
     color: #333333;
     margin: 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+/* Collapsed state for name */
+.collapsed .name {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: left;
 }
 .alt {
     font-size: 1.2rem;
     color: #777777;
     margin: 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+/* Collapsed state for alt text */
+.collapsed .alt {
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Text container for collapsed state */
+.collapsed .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px; /* Add margin between profile picture and text */
+}
+
+/* Remove hover effects in collapsed state */
+.collapsed .profile-picture-container:hover ~ .name,
+.collapsed .profile-picture-container:hover ~ .alt {
+    transform: none;
+}
+
+/* Regular hover effects */
+.profile-picture-container:hover ~ .name,
+.profile-picture-container:hover ~ .alt {
+    transform: translateY(10px);
 }
 
 /* Add these new hover effects to make name and pronouns drop down */
